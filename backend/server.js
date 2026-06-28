@@ -39,5 +39,5 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`ShopStack backend running on http://localhost:${PORT}`);
+  console.log(`ShopStack backend running on port:${PORT}`);
 });

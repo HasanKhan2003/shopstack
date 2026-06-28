@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+:root {
+  --color-primary: #d32f2f;
+  --color-primary-dark: #8d0000;
+  --color-secondary: #111111;
+  --color-surface: #ffffff;
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --app-gradient: linear-gradient(135deg, #ff5d5d 0%, #b70000 52%, #620000 100%);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-text);
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.16), transparent 32%),
+    var(--app-gradient);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section {
+  padding-bottom: 24px;
+  animation: pageFadeIn 260ms ease-out;
+}
+
+.hero-panel,
+.section-card,
+.summary-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 36px rgba(17, 17, 17, 0.1);
+}
+
+.hero-panel {
+  background: linear-gradient(135deg, rgba(211, 47, 47, 0.98) 0%, rgba(107, 0, 0, 0.96) 100%);
+}
+
+.section-card,
+.summary-card {
+  border-radius: 20px;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .page-section {
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-card,
+  .summary-card,
+  .hero-panel {
+    border-radius: 16px;
+  }
+}

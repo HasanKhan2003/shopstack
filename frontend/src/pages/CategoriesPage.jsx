@@ -124,24 +124,47 @@ const CategoriesPage = () => {
         ) : categoriesError ? (
           <ErrorMessage message={categoriesError} onRetry={() => window.location.reload()} />
         ) : (
-          <Grid container spacing={3}>
-            {categories.map((category) => (
-              <Grid item xs={12} sm={6} md={3} key={category.id}>
-                <CategoryCard
-                  category={category}
-                  image={categoryImageMap[category.id]}
-                  onClick={() => handleCategoryClick(category)}
-                  selected={selectedCategory?.id === category.id}
-                />
+          <Box
+            className="section-card"
+            sx={{
+              p: { xs: 2, md: 3 },
+            }}
+          >
+            <Stack spacing={2.5}>
+              <Box>
+                <Typography variant="h5" sx={{ fontWeight: 900, mb: 0.5 }}>
+                  Browse Categories
+                </Typography>
+                <Typography sx={{ color: 'var(--color-text-muted)' }}>
+                  Select a tile to load products from that category.
+                </Typography>
+              </Box>
+              <Grid container spacing={3}>
+                {categories.map((category) => (
+                  <Grid item xs={12} sm={6} md={3} key={category.id}>
+                    <CategoryCard
+                      category={category}
+                      image={categoryImageMap[category.id]}
+                      onClick={() => handleCategoryClick(category)}
+                      selected={selectedCategory?.id === category.id}
+                    />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
+            </Stack>
+          </Box>
         )}
 
-        <Box className="section-card">
+        <Box
+          className="section-card"
+          sx={{
+            p: { xs: 2, md: 3 },
+          }}
+        >
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
             justifyContent="space-between"
+            alignItems={{ xs: 'flex-start', sm: 'center' }}
             spacing={2}
             sx={{ mb: 3 }}
           >

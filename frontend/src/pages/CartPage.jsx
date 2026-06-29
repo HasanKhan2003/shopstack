@@ -163,15 +163,7 @@ const CartPage = () => {
               <Button
                 fullWidth
                 onClick={handleCheckout}
-                sx={{
-                  backgroundColor: '#ffffff',
-                  color: 'var(--color-primary)',
-                  border: '2px solid rgba(211, 47, 47, 0.18)',
-                  py: 1.5,
-                  '&:hover': {
-                    backgroundColor: '#fff1f1',
-                  },
-                }}
+                sx={{ py: 1.5 }}
               >
                 Checkout
               </Button>

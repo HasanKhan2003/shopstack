@@ -21,14 +21,26 @@ body {
   font-family: 'Manrope', sans-serif;
   color: var(--color-text);
   overflow-x: hidden;
+  background-color: var(--color-primary); 
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 34%),
     radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.16), transparent 32%),
     var(--app-gradient);
-  background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 
 a {
   color: inherit;
@@ -61,8 +73,12 @@ img {
 .summary-card {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 14px 36px rgba(17, 17, 17, 0.1);
+  transform: translateZ(0); 
+  will-change: transform;
 }
+
 
 .hero-panel {
   background: linear-gradient(135deg, rgba(211, 47, 47, 0.98) 0%, rgba(107, 0, 0, 0.96) 100%);

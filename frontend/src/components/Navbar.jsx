@@ -16,6 +16,8 @@ const Navbar = () => {
         backgroundColor: '#ffffff',
         color: 'var(--color-text)',
         borderBottom: '1px solid rgba(17, 17, 17, 0.08)',
+        transform: 'translateZ(0)', // Add this line
+        willChange: 'transform',    // Add this line
       }}
     >
       <Container maxWidth="lg">

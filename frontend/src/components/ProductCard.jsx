@@ -30,6 +30,7 @@ const ProductCard = ({ product, onClick }) => {
         <CardMedia
           component="img"
           height="220"
+          loading="lazy" /* Add this line */
           image={buildImageUrl(product.image) || fallbackImage}
           alt={product.name}
           sx={{
